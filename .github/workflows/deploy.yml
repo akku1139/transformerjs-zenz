@@ -37,10 +37,11 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm i
-      - name: Build
-        run: pnpm run build
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
+      - name: Build
+        run: pnpm run build --base "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
