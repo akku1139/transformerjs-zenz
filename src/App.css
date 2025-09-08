@@ -1,0 +1,5 @@
+@import "@picocss/pico/css/pico.jade.min.css";
+
+body {
+  padding: 50px;
+}
