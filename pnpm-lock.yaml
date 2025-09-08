@@ -15,14 +15,14 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       solid-js:
-        specifier: ^1.9.8
+        specifier: ^1.9.9
         version: 1.9.9
     devDependencies:
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
       vite:
-        specifier: ^7.1.2
+        specifier: ^7.1.5
         version: 7.1.5(@types/node@24.3.1)
       vite-plugin-solid:
         specifier: ^2.11.8
@@ -722,8 +722,8 @@ packages:
   html-entities@2.3.3:
     resolution: {integrity: sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==}
 
-  is-arrayish@0.3.3:
-    resolution: {integrity: sha512-tSgaw2XSvru5jovruZM5erodu5OprljBCzNF4A5zeh+VW6DkQzUJ9ZnISO7D9FKAR6vbTtP7UF598Gvzz14qww==}
+  is-arrayish@0.3.2:
+    resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
 
   is-what@4.1.16:
     resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
@@ -1552,7 +1552,7 @@ snapshots:
 
   html-entities@2.3.3: {}
 
-  is-arrayish@0.3.3: {}
+  is-arrayish@0.3.2: {}
 
   is-what@4.1.16: {}
 
@@ -1727,7 +1727,7 @@ snapshots:
 
   simple-swizzle@0.2.3:
     dependencies:
-      is-arrayish: 0.3.3
+      is-arrayish: 0.3.2
 
   solid-js@1.9.9:
     dependencies:
