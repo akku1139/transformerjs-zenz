@@ -19,7 +19,7 @@ async function convertKanaToKanji(input: WorkerMessage) {
   });
 
   // 出力を整形
-  const modelOutput = output[0].generated_text;
+  const modelOutput = (output[0] as any).generated_text
 
   // 後ろの特殊トークン以降の部分を抽出
   if (modelOutput.includes(suffix)) {

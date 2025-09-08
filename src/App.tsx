@@ -31,6 +31,7 @@ function App() {
 
   return (
     <>
+      <h1>Zenzモデルによるローカルかな漢字変換のデモ</h1>
       <form onsubmit={e => {
         e.preventDefault()
         setConvertiog(true)
