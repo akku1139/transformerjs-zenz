@@ -26,6 +26,8 @@ async function convertKanaToKanji(input: WorkerMessage) {
     return modelOutput.split(suffix)[1].trim();
   }
 
+  pipeline.dispose();
+
   return modelOutput.trim();
 }
 
