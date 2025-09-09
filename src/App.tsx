@@ -64,6 +64,7 @@ function App() {
       <h1>Zenzモデルによるローカルかな漢字変換のデモ</h1>
       <form onsubmit={e => {
         e.preventDefault()
+        setRes('')
         if(batch()) {
           batchQueue = rawKana().split('\n')
         }
