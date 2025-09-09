@@ -48,7 +48,7 @@ function App() {
     setConvertiog(false)
 
     if(batch()) {
-      setRes(res() + e.data.converted)
+      setRes(res() + '\n' + e.data.converted)
       if(batchQueue.length===0) {
         setBatch(false)
       } else {
