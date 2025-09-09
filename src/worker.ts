@@ -1,13 +1,18 @@
 import { pipeline } from '@huggingface/transformers';
 import type { WorkerMessage, WorkerResponse } from './types.ts'
 
+const pipes: any[] = [];
 
 // 変換関数
 async function convertKanaToKanji(input: WorkerMessage) {
-  const pipe = await pipeline('text-generation', input.model, {
-    device: input.webgpu ? 'webgpu' : void 0,
-    dtype: 'fp32',
-  });
+  let pipe: any = pipes[`${input.model}-${input.webgpu}`];
+  if(!pipe) {
+    pipe = await pipeline('text-generation', input.model, {
+      device: input.webgpu ? 'webgpu' : void 0,
+      dtype: 'fp32',
+    });
+    pipes[`${input.model}-${input.webgpu}`] = pipe
+  }
   // 特殊トークンを追加して入力を整形
   const prefix = "\uEE00";
   const suffix = "\uEE01";
@@ -25,8 +30,6 @@ async function convertKanaToKanji(input: WorkerMessage) {
   if (modelOutput.includes(suffix)) {
     return modelOutput.split(suffix)[1].trim();
   }
-
-  pipe.dispose();
 
   return modelOutput.trim();
 }
